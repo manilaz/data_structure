@@ -13,9 +13,9 @@ public class InsertionSort {
         for(int i = 0;i<arr.length ;i++){
             int temp = arr[i];
             int t_index = i;
-            for(int j = 0;j < i  ;j++){
+            for(int j = 0;j < i ;j++){//每次循环，有序数列个数+1，所以第i次循环，有序数列个数为i
                 count ++;
-                if(temp < arr[i-j-1]) {
+                if(temp < arr[i-j-1]) {//从最底部向上对比
                     arr[i-j] = arr[i-j-1];
                     t_index = i-j-1;
                 }else {
