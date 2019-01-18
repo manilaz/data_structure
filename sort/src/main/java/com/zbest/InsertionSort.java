@@ -12,7 +12,17 @@ public class InsertionSort {
         int count = 0;
 
         for(int i = 0;i<arr.length;i++){
-
+            temp = arr[i];
+            int t_index = i;
+            for(int j = 0;j< i;j++){
+                count++;
+                if(temp<arr[j]){
+                    arr[j+1] = arr[j];
+                }else {
+                    t_index = j+1;
+                }
+            }
+            arr[t_index] = temp;
         }
         return count;
     }
