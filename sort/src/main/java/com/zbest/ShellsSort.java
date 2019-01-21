@@ -12,12 +12,13 @@ public class ShellsSort {
         int k = getK(arr.length);
         do {
             count += sort(arr, k);
-            System.out.println("第"+count+"次排查后:"+array2String(arr));
+            System.out.println("k="+k+"时排序结果:"+array2String(arr));
         }while ((k = getK(k)) >= 1);
 
         return count;
     }
 
+    // 按步长插入排序
     public static int sort(int[] arr,int n){
         int count = 0;
 
@@ -43,7 +44,6 @@ public class ShellsSort {
         return n/2;
     }
 
-
     public static String array2String(int[] arr){
         StringBuilder builder = new StringBuilder("[");
         Arrays.stream(arr).forEach(p->{
@@ -55,21 +55,10 @@ public class ShellsSort {
     public static void print(int[] arr){
         int count = sort(arr);
         System.out.println("arr比较次数"+count+",排序结果:"+array2String(arr));
-        System.out.println("count:"+count);
     }
-
 
     public static void main(String[] args) {
         int[] arr = { 8,9,6,3,11,2,1,17,7};
         print(arr);
     }
-
-    public static  int[] random(int n) {
-        int[] text = new int[n];
-        for (int i = 0; i < text.length; i++) {
-            text[i]=(int)(Math.random()*100); //生成100以内的随机数
-        }
-        return text;
-    }
-
 }
