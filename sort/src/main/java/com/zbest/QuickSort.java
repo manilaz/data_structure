@@ -11,51 +11,51 @@ public class QuickSort {
 
     //单次分组
     public static int sort(int[] arr,int start,int end){
+
+        System.out.println("start:"+start+",end:"+end);
         int count = 0;
-        if(end <= start) return start;
+        if(end <= start) return count;
         int i = start + 1;
-        int length = end - start + 1;
         int j = end;
         int tmp ;
         do{
-            if(arr[i] > arr[j]){
+            System.out.println(arr[i] + "&&" + arr[j]);
+            if (arr[i] > arr[j]) {
                 tmp = arr[i];
                 arr[i] = arr[j];
                 arr[j] = tmp;
                 i++;
-            }else {
+            } else {
                 j--;
             }
             count++;
+            if(j<start || i>end) return count;
 
         }while (i != j);
         count ++;
-        if(arr[start] > arr[(end-start)/2]){
+        System.out.println(arr[start] + "&&&" + arr[j]+"&&&"+arr[i]);
+        if(arr[start] > arr[j]){
             tmp = arr[start];
-            arr[start] = arr[(end-start)/2];
-            arr[(end-start)/2] = tmp;
+            arr[start] = arr[j];
+            arr[j] = tmp;
         }
 
-        System.out.println("分组对比:"+count+"次,结果"+array2String(arr,start,(end-start)/2)+"|"+array2String(arr,(end-start)/2+1,end));
-        return (end-start)/2;
+//        if(start < (end-start)/2)
+//            count += sort(arr,start,(end-start)/2);
+//        if((end-start)/2+1 < end)
+//            count += sort(arr,(end-start)/2+1,end);
+
+        System.out.println(array2String(arr,start,i)+"|"+array2String(arr,i+1,end));
+
+        System.out.println(start+"|"+i+"|"+(i+1)+"|"+end);
+        System.out.println("---------");
+        return count;
     }
 
 
     public static int sort(int[] arr){
-        int k = arr.length;
 
-        int x = 0;
-        while ((k=k/2)>0){ //层数循环
-
-            if(x == 0){
-                int sort = sort(arr, 0, arr.length - 1);
-            }
-            for(int i = 0;i<(x=x*2);i++){
-
-            }
-
-        }
-        return 0;
+        return sort(arr,0,arr.length-1);
     }
 
 
@@ -81,6 +81,8 @@ public class QuickSort {
         int[] arr = {18,6,47,13,7,32,22,19,5};
 
         sort(arr,0,8);
+        sort(arr,0,4);
+//        sort(arr);
     }
 
 }
