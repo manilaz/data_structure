@@ -25,17 +25,17 @@ public class QuickSort {
                 j--;
             }
             count++;
-            if(j<start || i>end) return count;
-        }while (i != j);
+        }while (i <= j);
         count ++;
         if(arr[start] > arr[j]){
             tmp = arr[start];
             arr[start] = arr[j];
             arr[j] = tmp;
         }
+
         if(start < j)
             count += sort(arr,start,j);
-        if(j < end)
+        if(j <= end)
             count += sort(arr,j+1,end);
         return count;
     }
@@ -65,7 +65,12 @@ public class QuickSort {
     }
     public static void main(String[] args) {
         int[] arr = {18,6,47,13,7,32,22,19,5};
+        int[] arr1 = {1,2,3,4,5,6};//正序
+        int[] arr2 = {6,10,14,3,9};//无序
+        int[] arr3 = {6,5,4,3,2,1};//逆序
         print(arr);
+        print(arr1);
+        print(arr2);
+        print(arr3);
     }
-
 }
