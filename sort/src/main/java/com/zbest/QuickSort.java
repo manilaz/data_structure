@@ -3,7 +3,7 @@ package com.zbest;
 import java.util.Arrays;
 
 /**
- * Created by zhangbin on 2019/1/22.
+ * 快速排序
  */
 public class QuickSort {
 
